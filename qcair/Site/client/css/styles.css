@@ -1,0 +1,23 @@
+ul li {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	margin-left: 15px;	
+	border-left-style: solid;
+	border-left-width: 0.1px;
+	border-left-color: gray;
+
+}
+
+
+ul {
+	border-bottom-color: gray;
+	border-bottom-width: 0.5px;
+	border-bottom-style: solid;
+}
+
+a:select {
+	color: blue;
+}
