@@ -1,16 +1,24 @@
-<div class="modal fade">
+<div class="modal fade signUpModal">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div style="background-color: black; color: white; border-style: solid; border-color: white; border-width: 1px;" class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Yes or No?</h4>
+        <h4 style="text-align: center;">Sign Up</h4>
       </div>
       <div class="modal-body">
-        <p>It's your call and you did wonderful, You figured out a way to call this samething twice within a service</p>
+        <p>Sign up for your accout to access all the Wonderful gooodies!</p>
+        <h2>Name</h2>
+        <input class="form-control" placeholder="Name">
+        <h2>Username</h2>
+        <input class="form-control" placeholder="Create Username">
+        <h2>Password</h2>
+        <input style="margin-bottom: 4px;" class="form-control" placeholder="Create Password">
+        <input class="form-control" placeholder="Password Confirmation">
       </div>
       <div class="modal-footer">
+        <button type="button" ng-click="test()" class="btn btn-warning" data-dismiss="modal">Print Test</button>
         <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">No</button>
-        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Yes</button>
+        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Submit</button>
       </div>
     </div>
   </div>

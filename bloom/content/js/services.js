@@ -1,4 +1,4 @@
-angular.module('bloomApp.services', ['angularModalService'])
+angular.module('bloomApp.services', ['angularModalService','bloomApp.controllers'])
 
 
 
@@ -14,16 +14,12 @@ angular.module('bloomApp.services', ['angularModalService'])
 .factory('bloomModal', function(ModalService){
 
 	return {
-		createModal: function(data){
+		createModal: function(data, ctrl){
 
 			console.log(data);
 			  ModalService.showModal({
 	            templateUrl: data,
-	            controller: function($scope, close){
-	            	$scope.close = function(result){
-	            		close(result, 500);
-	            	}
-	            }
+	            controller: ctrl
 	        }).then(function(modal) {
 	            modal.element.modal();
 	            modal.close.then(function(result) {
@@ -56,8 +52,10 @@ angular.module('bloomApp.services', ['angularModalService'])
 			console.log("Your test was a success");
 		},
 
-		introModal: function(data){
-			bloomModal.createModal(data);
+		introModal: function(data, controller){
+			console.log(data);
+			console.log(controller);
+			bloomModal.createModal(data, controller);
 		}
 	}
 
