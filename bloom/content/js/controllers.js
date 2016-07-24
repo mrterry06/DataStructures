@@ -19,7 +19,7 @@ angular.module('bloomApp.controllers', ['angularModalService'])
 	            		console.log("Hey you are here");
 	            		$timeout(function() {
 	            			$state.go("buProfileForm");
-	            		}, 1000);
+	            		}, 500);
 	            	}
 
 		$scope.test = function(){
