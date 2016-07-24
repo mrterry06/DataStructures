@@ -1,16 +1,14 @@
-<form id="checkout" method="post" action="/checkout">
-  <div id="payment-form"></div>
-  <input type="submit" value="Pay $10">
-</form>
-
-<script src="https://js.braintreegateway.com/js/braintree-2.24.1.min.js"></script>
-<script>
-// We generated a client token for you so you can test out this code
-// immediately. In a production-ready integration, you will need to
-// generate a client token on your server (see section below).
-
-
-braintree.setup( "/client_token" , "dropin", {
-  container: "payment-form"
-});
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='./braintree/bower_components/fullcalendar/dist/fullcalendar.css' />
+<script src='./braintree/bower_components/jquery/dist/jquery.min.js'></script>
+<script src='./braintree/bower_components/moment/min/moment.min.js'></script>
+<script src='./braintree/bower_components/fullcalendar/dist/fullcalendar.js'></script>
+<script type="text/javascript" src="hip.js"></script>
+	<title></title>
+</head>
+<body>
+<div id='calendar'></div>
+</body>
+</html>
