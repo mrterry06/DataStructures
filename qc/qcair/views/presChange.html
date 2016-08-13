@@ -1,0 +1,39 @@
+<div class="container"><h1>You are about to change President Credentials. Are you sure you want to do that?</h1>
+
+<p> Changing the president credentials means the current persident will no longer be able to access this functionality. He will be permanently erased from the system while establishing the new persident. The new president will then be required to add the previous presidents credentials to the administration list in order to have some type of authority within this domain. The guidlines set for this position are :
+There can only ever be one President. This President has functionalities that the administration doesn't have. Certain members of the administration will be able to see more than others based on consent given by the President. Administrator can only ever be added or removed by the President. The President can never be removed. All administrators have to send request to the president before an event is added to the calendar. The contact list can be added to or removed from by the president. The rest of the members only have the ability to add.  </p>
+
+<h2>Once again be careful! Remeber to write down your password and keep it in a SafePlace. If you encounter any difficulty please e-mail: mrterry06@gmail.com(Software Engineer)</h2>
+
+
+<table class="table">
+	<thead>
+		<th>username</th>
+		<th>password</th>
+	</thead>
+	<tr>
+		<td><input class="form-control" placeholder="New President" ng-model="presi.username"></input></td>
+		<td><input class="form-control" placeholder="New Password" ng-model="presi.password"></input></td>
+	</tr>
+	<tr>
+		<td><input class="form-control" placeholder="Confirm Username" ng-model='pre.ucon'></input></td>
+		<td><input class="form-control" placeholder="Confirm Password" ng-model='pre.pcon'></input></td>
+		<button class="btn btn-warning" ng-click="rewrite(current[0]._id)">Change</button>
+	</tr>
+</table>
+<h3 style="text-align: center;">Current President</h3>
+<table class="table">
+	<thead>
+			<th>Name</th>
+			<th>PassWord</th>
+	</thead>
+	<tr>
+		<td>{{ current[0].username }}</td>
+		<td>{{ current[0].password }}</td>
+		<td><button class="btn btn-default">President</button></td>
+	</tr>
+</table>
+
+
+
+</div>

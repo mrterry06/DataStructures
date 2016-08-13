@@ -1,0 +1,34 @@
+{
+  "name": "qcair",
+  "version": "1.0.0",
+  "description": "QCAir Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrterry06/Qcair.git"
+  },
+  "keywords": [
+    "qcair",
+    "application",
+    "refudgee"
+  ],
+  "author": "Scott Terry Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrterry06/Qcair/issues"
+  },
+  "homepage": "https://github.com/mrterry06/Qcair#readme",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.1",
+    "braintree": "^1.39.0",
+    "express": "^4.13.4",
+    "mongojs": "^2.4.0",
+    "morgan": "^1.7.0",
+    "nodemailer": "^2.4.2"
+  }
+}
