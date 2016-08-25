@@ -1,7 +1,7 @@
 var express = require('express');
 var app 	= express();
 var morgan  = require('morgan');
-var port    = 8000;
+var port    = 8888;
 var mongojs = require('mongojs');
 var dburl   = "test";
 var db      = mongojs(dburl, ["bloomDB"]);
@@ -9,6 +9,7 @@ var bcrypt  = require('bcryptjs');
 var bodyParser = require("body-parser");
 var gulp 	= require('gulp');
 var livereload = require('gulp-livereload');
+var passport = require('passport');
 
 app.use(bodyParser.json())
 	.use(bodyParser.urlencoded({
@@ -48,6 +49,10 @@ gulp.task('watch', function(){
 
 gulp.task('default', ['scripts', 'styles', 'structure', 'watch']);
 
+app.post('/login', function(req, res){
+	passport.authenticate();
+
+});
 
 
 app.use(express.static(__dirname + '/content'))

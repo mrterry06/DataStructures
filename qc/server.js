@@ -2,7 +2,7 @@ var express 	= require('express');
 var app 		= express();
 var morgan 		= require('morgan');
 var mongojs		= require('mongojs'); 	
-var dburl		= "qcair"; 		
+var dburl		= "mongodb://qcair:qcairgc2016@ds017193.mlab.com:17193/qcair"; 		
 var dpres 		= mongojs(dburl, ['president']);
 var dusers 		= mongojs(dburl, ['users']);
 var dcontacts	= mongojs(dburl, ['contacts']);
@@ -10,7 +10,17 @@ var dcalendar	= mongojs(dburl, ['calendar']);
 var bcrypt   	= require('bcryptjs');
 var nodemailer	= require('nodemailer');
 var bodyParser 	= require('body-parser');
+var util	 	= require('util');
 var braintree	= require('braintree');
+var requestedNonce;
+
+// var gateway = braintree.connect({
+//   environment: braintree.Environment.Sandbox,
+//   merchantId: "bzb26s8km9shdzbq",
+//   publicKey: "hm2qy8b8c3cjvdd2", 
+//   privateKey: "db4de26316d377c153e24384c676bd5d"
+// });
+
 
 var gateway = braintree.connect({
   environment: braintree.Environment.Production,
@@ -24,6 +34,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
+
+
 
 dpres.on('error', function (err) {
 	console.log('database error', err)
@@ -64,8 +76,8 @@ var smtpConfig = {
 	port: 465,
 	secure: true,
 	auth: {
-		user: 'mrterry06@gmail.com',
-		pass: 'Elfin123'
+		user: 'quadcitiesair@gmail.com',
+		pass: 'qcairgc2016'
 	}
 };
 
@@ -77,7 +89,7 @@ var transporter = nodemailer.createTransport(smtpConfig);
  	var tips = '"' + req.body.name + '"' + ' '  + '<' + req.body.email + '>';
  	var mailOption = {
 	from: tips,
-	to: 'mrterry06@gmail.com',
+	to: 'qcair@qcair.org',
 	subject: req.body.subject ,
 	text: req.body.email,
 	html: element
@@ -271,25 +283,42 @@ app.put('/events/:id', function(req, res){
 });
 
 
+
 app.get("/clientToken", function (req, res) {
   gateway.clientToken.generate({}, function (err, response) {
-    res.send(response.clientToken);
+  	
+  	res.send( response.clientToken);
+
+  
+  	//res.send(response.clientToken);
+
   });
 });
+
+
 
 app.post("/checkout", function (req, res) {
 	console.log(req.body);
 	var amount = req.body.amount;
+	console.log(req.body);
+	console.log(req.body.checkout);
+	console.log(req.body.payment_method_nonce);
+
   var nonceFromTheClient = req.body.payment_method_nonce;
+
+  console.log("Below Here");
+  console.log(nonceFromTheClient);
   // Use payment method nonce here
   gateway.transaction.sale({
-  amount: amount,
+  amount: req.body.amount,
   paymentMethodNonce: nonceFromTheClient,
   options: {
     submitForSettlement: true
   }
 	}, function (err, result) {
 		if(result === undefined || result.transaction === undefined){
+			console.log(err);
+			console.log(result);
 			res.redirect("/#/processRed");
 		}else{
 				console.log(result.transaction.status);
@@ -314,18 +343,6 @@ app.post("/checkout", function (req, res) {
 					};
 					}
 				});
-			mailOption = {
-				from: 'qcair@qcair.org',
-				to: req.body.email
-				subject: 'Donation Reciept',
-				text: "This is proof of your transaction",
-				html: JSON.stringify(req.body)
-			};
-			transporter.sendMail(mailOption, function(err, info){
-				if(err){
-					res.send(false);
-				} 
-			});
 			
 		}
 	});

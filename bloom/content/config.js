@@ -7,14 +7,16 @@ angular.module('bloomApp' , ['ui.router', 'bloomApp.controllers', 'bloomApp.serv
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
+
+		//Home View
 			.state('home', {
 				url: '/',
-				templateUrl: 'js/views/splash.html',
+				templateUrl: 'templates/splash/splash.html',
 				controller: 'mainCtrl'
 			})
-			.state('buProfileForm', {
-				url: '/buProfileForm',
-				templateUrl: 'js/views/setup-profile.html'
+			.state('buProfile', {
+				url: '/buProfile',
+				templateUrl: 'templates/profile/profile.html'
 
 			})
 			.state('buSignUpForm.credentials',{
@@ -25,7 +27,7 @@ angular.module('bloomApp' , ['ui.router', 'bloomApp.controllers', 'bloomApp.serv
 			})
 			.state('buVideo', {
 				url: '/buVideo',
-				templateUrl: 'js/views/video-chat/video.html',
+				templateUrl: 'templates/video-chat/video.html',
 				controller: 'buVideoCtrl'
 			});
 	});

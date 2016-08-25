@@ -9,12 +9,13 @@
   "author": "Scott Terry & Chante' Terry",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0",
     "bcryptjs": "",
-    "mongojs" : "",
-    "gulp"	  : "",
+    "body-parser": "",
+    "express": "^4.14.0",
+    "gulp": "",
     "gulp-livereload": "",
-    "morgan"  : "",
-    "body-parser" : ""	
+    "localforage": "^1.4.2",
+    "mongojs": "",
+    "morgan": ""
   }
 }
