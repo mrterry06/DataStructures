@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Bootstrap starts Here -->
+<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap-theme.min.css">
+		<!-- Angular Starts Here-->
+
+
+		<!-- Connected Pages-->
+		
+		<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	
+   
+		<!-- fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Cantarell|Arvo|Courgette|Lora' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic|Noto+Sans' rel='stylesheet' type='text/css'>
+    
+	<meta-charset="UTF-8">
+</head>
+<body ng-app="myApp">
+    <div class="container">
+
+    	<div ng-view></div>
+
+
+
+<script type="text/javascript" src="./lib/angular.js"></script>
+<script type="text/javascript" src="./lib/angular-route.js"></script>
+
+<script type="text/javascript" src="lib/angular-animate.min.js"></script>
+<script type="text/javascript" src="lib/angular-messages.js"></script>
+<script type="text/javascript" src="lib/angular-aria.js"></script>
+
+
+<script src="module.js"></script>
+<script src="https://js.braintreegateway.com/js/braintree-2.24.1.min.js"></script>
+<script>
+ function runBrain(){
+	var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if(xhttp.readyState == 4 && xhttp.status == 200){
+				var token = xhttp.responseText;
+
+				braintree.setup(token, 'custom', { id: 'checkout' });
+
+
+
+			}
+		}
+
+	xhttp.open("GET", '/clientToken', true);
+	xhttp.send();
+	}	
+</script>
+
+	
+    </div>
+</body>
+</html>

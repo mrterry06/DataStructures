@@ -1,0 +1,110 @@
+<div class="modal fade signUpModal">
+
+  <div class="modal-dialog">
+
+    <div style="background-color: black; color: white; border-style: solid; border-color: white; border-width: 1px;" class="modal-content">
+
+      <div class="modal-header">
+
+        <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        <h4 style="text-align: center;">Sign Up</h4>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <div id="firstTab" ng-if="firstTab">
+
+          <p>Sign up for your accout to access all the Wonderful gooodies!</p>
+
+          <h2>Name</h2>
+
+          <input class="form-control" type="text" placeholder="Name">
+
+          <h2>Username</h2>
+
+          <input ng-model="user.username" class="form-control" type="text" placeholder="Create Username">
+
+          <h2>E-mail</h2>
+
+          <input ng-model="user.email" class="form-control" type="email" placeholder="Email Address">
+          
+          <h2>Password</h2>
+          
+          <input ng-model="user.password" style="margin-bottom: 4px;" type="password" class="form-control" 
+          placeholder="Create Password">
+          
+
+          <input ng-model="user.confirm" class="form-control" type="password" placeholder="Password Confirmation">
+        
+        </div>
+        
+        <div id="secondTab" ng-if="secondTab">
+        
+          <h2>Area</h2>
+        
+          <input ng-model="user.area" class="form-control" type="text" placeholder="Zip Code and City">
+        
+          <h2>Gender</h2>
+        
+          <input ng-model="user.gender" type="radio" value="male">Male</input>
+        
+          <input ng-model="user.gender" type="radio" value="female">Female</input>
+        
+          <h2>Age</h2>
+        
+          <input ng-model="user.age" type="number" maxlength="3"></input>
+        
+          <h2>Etnicity</h2>
+        
+          <input ng-model="user.etnicity" type="text" placeholder="Etnicity"></input> 
+        
+        </div>
+        
+        <div id="thirdTab" ng-if="thirdTab">
+        
+          <h2>Height</h2>
+        
+          <input ng-model="user.height" type="number"></input>
+        
+          <h2>Body Type</h2>
+        
+          <h2>Car</h2>
+        
+          <h2>Job</h2>
+        
+        </div>
+        
+        <div id="finalTab" ng-show="finalTab">
+        
+          <h2>Income</h2>
+        <input type="checkbox" ng-checked="man" ng-click="test()"></input>
+          <h2>Kids</h2>
+          
+          <h2>Housing</h2>
+
+          <h2>purpose</h2>
+        </div>
+     
+      </div>
+     
+
+      <div class="modal-footer">
+     
+        <button type="button" ng-click="back()" ng-show="backButton" class="btn btn-default">Back</button>
+     
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+     
+        <button type="button" ng-hide="finalTab" ng-click="next('yes')" class="btn btn-primary">Next</button>
+     
+        <button type="button" ng-show="finalTab" ng-click="submitInfo(true, user)" class="btn btn-primary" data-dismiss="modal">Submit</button>
+   
+      </div>
+   
+    </div>
+  
+  </div>
+
+</div>

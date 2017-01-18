@@ -1,0 +1,110 @@
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+
+    <title>Admin Access</title>
+  </head>
+
+  <body>
+  <div class="container">
+  <div class="container">  
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Admin Access</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/">Webpage Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+   
+  <hr class="featurette-divider">
+   <h2 style="text-align: center; margin-top: 150px;">Contacts</h2>
+    <hr class="featurette-divider">
+    <table class="table" style="margin-top: 50px;">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Action</th>
+  <tr>  
+  </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input class="form-control" ng-model="contact.name"></input></td>
+          <td>
+          <input class="form-control" ng-model="contact.number"></input></td>
+          <td>
+          <input class="form-control" ng-model="contact.email"></input></td>
+          <td>
+          <input class="form-control" ng-model="contact.address"></input></td>
+          <td>
+          <button class="btn btn-primary" ng-click="addContact()"> Add Contact</button>
+        </td>
+      </tr> 
+      <tr ng-repeat="contact in contacts">
+        <td> {{ contact.name }}</td>
+        <td> {{ contact.number }}</td>
+        <td>  {{contact.email }}</td>
+        <td>  {{contact.address }}</td>
+      </tr>
+    </tbody>  
+</table>
+   <h2 style="text-align: center; margin-top: 150px;">Events</h2>
+    <hr class="featurette-divider">
+    <table class="table" style="margin-top: 50px;">
+  <thead>
+  <tr>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Place</th>
+    <th>Action</th>
+  <tr>  
+  </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input class="form-control" ng-model="event.name"></input></td>
+          <td>
+          <input class="form-control" ng-model="event.date"></input></td>
+          <td>
+          <input class="form-control" ng-model="event.place"></input></td>
+          <td>
+          <button class="btn btn-default" ng-click="addEvent()"> Add Event</button>
+        </td>
+        <td>
+          <button class="btn btn-default" ng-click="updateEvent()">Update</button>
+        </td>
+      </tr> 
+      <tr ng-repeat="event in events">
+        <td> {{ event.name }}</td>
+        <td> {{ event.date }}</td>
+        <td>  {{ event.place }}</td>
+        <td><button class="btn btn-default" ng-click="removeEvent(event._id)"> Remove</button></td>
+        <td><button class="btn btn-default" ng-click="editEvent(event._id)">Edit</button></td>
+      </tr>
+    </tbody>  
+</table>
+  <hr class="featurette-divider">
+</div>
+  
+  </body>

@@ -1,0 +1,42 @@
+
+
+<div ng-include="'./views/nav.html'"></div>
+
+<div class="col col-md-offset-3" style="margin-bottom: 5px;">
+	<h2 style="font-family: 'arvo';">Giving to QCAIR, Giving to the World</h2>
+</div>
+<div>
+	<p class="sub-header-text">Giving to QCAIR extends to families and individuals in need. We would love to have you volunteer. We understand that not everyone can due to time constraints and other factors. Donating is the perfect alternative for anyone who can't offer in person services. It is also perfect for anyone who just wants to support the vision and be a part of an organization that is shaping the world. Every donation is tax deductible. Upon approval you will be e-mailed a receipt. The only fields that are mandatory are the CVV, Expiration Date, Card Number and amount. This is to give any guest the option to remain anonymous. We thank you!</p>
+</div>
+<hr class="featurette-divider">
+
+<form id="checkout" method="post" action="/checkout">
+	Name/Company: <input type="text" class="form-control" name="name" ng-model='comp.name' placeholder="John Doe's Compay"></input>
+
+	Address: <input type="text" name="address" class="form-control" ng-model='comp.address' placeholder="111 Awesome Street"></input>
+
+	Email:<input type="email" name="email" class="form-control" ng-model='comp.email' placeholder="john@johndoe.com"></input>
+	
+	Phone: <input type='text' name="phone" class="form-control" ng-model='comp.phone' placeholder="1(555)555-5555"></input><br>
+	
+	<hr class="featurette-divider">
+	
+	Amount $ <span style="color: red;">*</span> <input type="text" pattern="\d+\.\d{2}" name="amount" class="form-control" placeholder="10000.00 Do not use commas" ng-model='comp.
+	amount' required>
+	
+	Card number: <span style="color: red;">*</span> <input data-braintree-name="number" maxlength="16" class="form-control" placeholder="1234567891234567 No spaces" required>
+	Expiration Date (MM/YY): <span style="color: red;">*</span> <input data-braintree-name="expiration_date" maxlength="5" placeholder='A "/" is required' class="form-control" required>
+	
+	CVV:<span style="color: red;">*</span> <input data-braintree-name="cvv" maxlength="3" class="form-control" placeholder="3 digits on back of card" required>
+	<input type="submit" id="submit" class='btn btn-default' value="Donate">
+	
+</form>
+
+
+
+
+
+
+<hr class="featurette-divider">
+<div ng-include="'./views/mainFoot.html'"></div>
+

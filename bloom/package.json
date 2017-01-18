@@ -1,0 +1,21 @@
+{
+  "name": "bloom",
+  "version": "1.0.0",
+  "description": "Dating Application",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "Scott Terry & Chante' Terry",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "",
+    "body-parser": "",
+    "express": "^4.14.0",
+    "gulp": "",
+    "gulp-livereload": "",
+    "localforage": "^1.4.2",
+    "mongojs": "",
+    "morgan": ""
+  }
+}

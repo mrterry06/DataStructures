@@ -1,0 +1,58 @@
+ul li {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 10px 10px 10px 10px;
+	margin-left: 15px;	
+	border-left-style: solid;
+	border-left-width: 0.1px;
+	border-left-color: gray;
+	font-family: 'Noto Sans';
+
+
+}
+
+
+ul {
+	border-bottom-color: gray;
+	border-bottom-width: 0.5px;
+	border-bottom-style: solid;
+}
+
+img {
+	box-shadow: -5px 10px 5px #888888;
+}
+
+a:select {
+	color: blue;
+}
+
+.banner {
+
+	border-radius: 4px;
+	height: 500px;
+	width: 500px;
+}
+
+.sub-header {
+	font-family: 'arvo';
+	text-align: center;
+}
+
+.sub-header-text {
+	font-family: 'Noto Sans';
+}
+.sub-space {
+	text-align: center;
+	margin-left: 40px;
+	font-weight: bold;
+	font-family: 'Noto Sans';
+	display: inline;
+}
+
+.login {
+
+	margin-top: 10px;
+	width: 350px;
+	
+}

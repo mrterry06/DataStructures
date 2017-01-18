@@ -1,0 +1,19 @@
+
+    <div>
+      <form class="form-signin">
+        <h2 class="col col-md-offset-5">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input class="col col-md-offset-4 form-control login" ng-model='admin.user' type="text" id="inputUser" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input class="col col-md-offset-4 form-control login" ng-model='admin.password' type="password" id="inputPassword"  placeholder="Password" required>
+        <div>
+            <p style="text-align: center;"> {{ wrong }}</p>
+        </div>
+        <div>
+        <button style=" width: 200px;" class="btn btn-lg btn-default btn-inline col col-md-offset-5 " ng-click='submitAdmin()' type="submit">Sign in</button>
+        </div>
+      </form>
+      </div>
+
+<p style="font-size: 25px;"> <a style="color: black;" href="#/"><- Back</a> </p>
+  
